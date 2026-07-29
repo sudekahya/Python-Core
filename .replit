@@ -1,20 +1,18 @@
-modules = ["nodejs-24"]
+modules = ["nodejs-24", "python-3.11"]
 
-[deployment]
-router = "application"
-deploymentTarget = "autoscale"
+run = "python main.py"
 
-[deployment.postBuild]
-args = ["pnpm", "store", "prune"]
-env = { "CI" = "true" }
+[[ports]]
+localPort = 8080
+externalPort = 8080
 
-[workflows]
-runButton = "Project"
+[[ports]]
+localPort = 8081
+externalPort = 80
 
 [agent]
-stack = "PNPM_WORKSPACE"
 expertMode = true
 
-[postMerge]
-path = "scripts/post-merge.sh"
-timeoutMs = 20000
+[nix]
+
+

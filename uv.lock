@@ -1,0 +1,20 @@
+version = 1
+revision = 3
+requires-python = ">=3.11"
+
+[[package]]
+name = "my-module"
+version = "1.6.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/3f/2b1b4b52d4ebe8aee9da68fca5a55c03294a5c39785dd9427bab5717ae47/my_module-1.6.2.zip", hash = "sha256:14a0cffb0e077ca69404729a852b4088c503a25ecf63ef5b12fbfa2257e43318", size = 967, upload-time = "2016-08-20T07:02:03.681Z" }
+
+[[package]]
+name = "repl-nix-workspace"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "my-module" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "my-module", specifier = ">=1.6.2" }]
