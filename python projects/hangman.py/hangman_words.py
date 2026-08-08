@@ -1,0 +1,1 @@
+word_list =["apple", "guitar", "planet", "castle", "bridge", "yellow", "pocket", "wizard"]
